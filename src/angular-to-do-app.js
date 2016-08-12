@@ -1,4 +1,4 @@
-import {Component, View} from 'angular2/core';
+import {Component, View} from '../node_modules/angular2/core';
 
 @Component({
   selector: 'angular-to-do-app'

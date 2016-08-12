@@ -1,5 +1,5 @@
-import {Component, View} from 'angular2/core';
-import {bootstrap} from 'angular2/platform/browser';
+import {Component, View} from '../node_modules/angular2/core';
+import {bootstrap} from '../node_modules/angular2/platform/browser';
 import {AngularToDoApp} from 'angular-to-do-app';
 
 @Component({
@@ -13,8 +13,3 @@ import {AngularToDoApp} from 'angular-to-do-app';
   `
 })
 
-class Main {
-
-}
-
-bootstrap(Main);
