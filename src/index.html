@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="PL">
+<html lang="EN">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,16 +10,27 @@
 
     <title>angular-to-do-app</title>
   </head>
-  <body>
-    <header class="">
-      <h1>Hello</h1>
+  <body ng-app="toDoApp" ng-controller="toDoControl" class="todo-wrapper">
+    <header>
+      <h2>You have got {{toDoTotal()}} things to do</h1>
     </header><!-- /header -->
     <main>
-      <h2>Witam</h2>
+      <table>
+        <tr ng-reapet="todo in todos">
+          <td>
+            {{todo.description}}
+          </td>
+          <td>
+            {{todo.dat | date: 'MMM dd, yyyy'}}
+          </td>
+          <td>
+            <!-- to do delete button -->
+          </td>
+        </tr>
+      </table>
+      <input for="thing" type="text" name="toDoInput" placeholder="Read what is to do">
+      <button type="button" class="btn btn-primary"><h3>ADD</h3></button>
     </main><!-- /main -->
-    <footer>
-      
-    </footer><!-- /footer -->
 
     <script src="../build/lib/es6-shim.min.js"></script>
     <script src="../build/lib/angular2-polyfills.js"></script>
