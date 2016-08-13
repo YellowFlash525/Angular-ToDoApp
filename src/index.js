@@ -16,26 +16,28 @@ import {AngularToDoApp} from 'angular-to-do-app';
 var toDoApp = angular.module("toDoApp", ['ngAnimate']);
 
 toDoApp.controller('toDoController', function($scope){
-		$scope.todos = [
-			{
-				description:'introduction',
-				dat: Date.now()
-			},
-			{
-				description:'controller',
-				dat: Date.now()
-			}
-		];
+		$scope.todos = {
+			todo:[
+				{
+					description:'introduction',
+					dat: Date.now()
+				},
+				{
+					description:'controller',
+					dat: Date.now()
+				}
+			],
 
-		$scope.toDoTotal = function () {
-    		return $scope.todos.length;
+			toDoTotal: function () {
+    			return todo.length();
+  			},
+
+  			toDoAdd: function () {
+
+  			},
+
+  			toDoClear: function () {
+
+  			}
   		};
-
-  		$scope.toDoAdd = function () {
-
-  		};
-
-  		$scope.toDoClear = function () {
-
-  		}
 });

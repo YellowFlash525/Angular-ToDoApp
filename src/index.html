@@ -10,28 +10,59 @@
 
     <title>angular-to-do-app</title>
   </head>
-  <body ng-app="toDoApp" ng-controller="toDoControl" class="todo-wrapper">
-    <header>
-      <h2>You have got {{toDoTotal()}} things to do</h1>
-    </header><!-- /header -->
-    <main>
-      <table>
-        <tr ng-reapet="todo in todos">
-          <td>
-            {{todo.description}}
-          </td>
-          <td>
-            {{todo.dat | date: 'MMM dd, yyyy'}}
-          </td>
-          <td>
+  <body class="todo-wrapper">
+    <div ng-app="toDoApp" ng-controller="toDoControl">
+      <h2>You have got {{todos.toDoTotal()}} things to do</h2>
+      <main>
+        <table>
+          <tr ng-repeat="todo in todos.todo">
+            <td>
+              {{todo.description}}
+            </td>
+            <td>
+              {{todo.dat | date: 'MMM dd, yyyy'}}
+            </td>
+            <td>
             <!-- to do delete button -->
-          </td>
-        </tr>
-      </table>
-      <input for="thing" type="text" name="toDoInput" placeholder="Read what is to do">
-      <button type="button" class="btn btn-primary"><h3>ADD</h3></button>
-    </main><!-- /main -->
+            </td>
+          </tr>
+        </table>
+        <div>
+          <p> Read what want you to do <input for="thing" type="text" name="toDoInput" placeholder=""></p>
+          <button type="button" class="btn btn-primary"><h3>ADD</h3></button>
+        </div>
+      </main><!-- /main -->
+    </div>
 
+    <script>
+      var toDoApp = angular.module("toDoApp", ['ngAnimate']);
+      toDoApp.controller('toDoController', function($scope){
+          $scope.todos = {
+          todo:[
+            {
+                description:'introduction',
+                dat: Date.now()
+            },
+            {
+                description:'controller',
+                dat: Date.now()
+            }
+          ],
+
+          toDoTotal: function () {
+            return todo.length();
+          },
+
+          toDoAdd: function () {
+
+          },
+
+          toDoClear: function () {
+
+          }
+        };
+      });
+    </script>
     <script src="../build/lib/es6-shim.min.js"></script>
     <script src="../build/lib/angular2-polyfills.js"></script>
     <script src="../build/lib/traceur-runtime.js"></script>
