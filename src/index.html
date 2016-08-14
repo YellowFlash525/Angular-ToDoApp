@@ -24,17 +24,15 @@
               {{todo.dat | date: 'MMM dd, yyyy'}}
             </td>
             <td>
-            <!-- to do delete button -->
+              <i ng-click="toDoRemove(toDo)">X
             </td>
           </tr>
         </table>
-        <div>
         <form ng-submit="toDoAdd()">
-          <p for="thing"> Need to do </p><input type="text" name="toDoInput" ng-model="thing" placeholder="Add">
+          <p for="toDoText"> Need to do </p><input id="toDO" type="text" name="toDoText" ng-model="toDoText" placeholder="Add">
           <p for="date"> by </p><input type="text" name="date" ng-model="formDueDate" placeholder="mm/dd/yy">
           <button type="submit"><h3>ADD</h3></button>
         </form>
-        </div>
       </main><!-- /main -->
     </div>
 
@@ -60,10 +58,15 @@
                $scope.toDoAdd = function() {
                   var formatDate = Date.parse($scope.formDueDate);
 
-                  $scope.todos.push({description:$scope.thing, dat:formatDate});
+                  $scope.todos.push({description:$scope.toDoText, dat:formatDate});
 
-                  $scope.thing = '';
+                  $scope.toDoText = '';
                   $scope.formDueDate = '';
+               };
+
+               $scope.toDoRemove = function(toDo) {
+                  var index = $scope.todos.indexOf(toDo);
+                  $scope.todos.splice(index, 1);
                };
          });
     </script>

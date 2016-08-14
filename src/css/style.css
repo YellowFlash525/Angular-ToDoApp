@@ -1,9 +1,28 @@
+*{
+  	box-sizing: border-box;
+}
+
+body {
+  	background: #13756D;
+}
 
 .todo-wrapper {
-  background: #55B6AE;
-  width: 100%;
+  	background: #55B6AE;
+  	width: 100%;
+}
+
+form {
+  	text-align: center;
+  	margin-bottom: 20px;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
 
 h2 {
-	  font-family: megrim, fantasy;
+	font-family: megrim, fantasy;
+	text-align: center;
 }
