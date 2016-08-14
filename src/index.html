@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 
     <!-- Link to style.css -->
     <link rel="stylesheet" href="css/style.css">
@@ -11,11 +12,11 @@
     <title>angular-to-do-app</title>
   </head>
   <body class="todo-wrapper">
-    <div ng-app="toDoApp" ng-controller="toDoControl">
-      <h2>You have got {{todos.toDoTotal()}} things to do</h2>
+    <div ng-app="toDoApp" ng-controller="toDoController">
+      <h2>You have got<span></span> {{toDoTotal()}} things to do</h2>
       <main>
         <table>
-          <tr ng-repeat="todo in todos.todo">
+          <tr ng-repeat="todo in todos">
             <td>
               {{todo.description}}
             </td>
@@ -28,40 +29,43 @@
           </tr>
         </table>
         <div>
-          <p> Read what want you to do <input for="thing" type="text" name="toDoInput" placeholder=""></p>
-          <button type="button" class="btn btn-primary"><h3>ADD</h3></button>
+        <form ng-submit="toDoAdd()">
+          <p for="thing"> Need to do </p><input type="text" name="toDoInput" ng-model="thing" placeholder="Add">
+          <p for="date"> by </p><input type="text" name="date" ng-model="formDueDate" placeholder="mm/dd/yy">
+          <button type="submit"><h3>ADD</h3></button>
+        </form>
         </div>
       </main><!-- /main -->
     </div>
 
     <script>
-      var toDoApp = angular.module("toDoApp", ['ngAnimate']);
-      toDoApp.controller('toDoController', function($scope){
-          $scope.todos = {
-          todo:[
-            {
-                description:'introduction',
-                dat: Date.now()
-            },
-            {
-                description:'controller',
-                dat: Date.now()
-            }
-          ],
+      var toDoApp = angular.module("toDoApp", []);
+         
+         toDoApp.controller('toDoController', function($scope) {
+               $scope.todos = [
+                  {
+                    description: 'Angular1',
+                    dat: Date.now()
+                  },
+                  {
+                    description: 'Angular2',
+                    dat: Date.now()
+                  }
+               ];
+               
+               $scope.toDoTotal = function() {
+                  return $scope.todos.length;
+               };
 
-          toDoTotal: function () {
-            return todo.length();
-          },
+               $scope.toDoAdd = function() {
+                  var formatDate = Date.parse($scope.formDueDate);
 
-          toDoAdd: function () {
+                  $scope.todos.push({description:$scope.thing, dat:formatDate});
 
-          },
-
-          toDoClear: function () {
-
-          }
-        };
-      });
+                  $scope.thing = '';
+                  $scope.formDueDate = '';
+               };
+         });
     </script>
     <script src="../build/lib/es6-shim.min.js"></script>
     <script src="../build/lib/angular2-polyfills.js"></script>
