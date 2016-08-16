@@ -1,13 +1,9 @@
-*{
-  	box-sizing: border-box;
-}
 
 body {
-  	background: #13756D;
+  	background: #55B6AE;
 }
 
 .todo-wrapper {
-  	background: #55B6AE;
   	width: 100%;
 }
 
@@ -20,9 +16,43 @@ table {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+
 }
 
+tr td {
+	background-color: #13756D;
+	padding: 20px 80px; 
+}
+
+tr:hover td {
+	background-color: #55B6AE;
+}
+
+
 h2 {
-	font-family: megrim, fantasy;
+	font-family: "Brush Script MT", cursive;
 	text-align: center;
+	font-size: 80px;
+	background-color: #13756D;
+	margin: -10px -10px 0px;
+	padding-bottom: 25px;
+}
+
+h2 > span {
+	font-family: "Brush Script Std", cursive;
+	font-size: 120px;
+
+}
+
+label {
+	font-family: "Brush Script MT", cursive;
+	font-size: 40px
+}
+
+.toDoAdd {
+	margin-left: 0px;
+}
+
+.buttonAdd {
+	padding: -10px 10px;
 }

@@ -13,7 +13,12 @@
   </head>
   <body class="todo-wrapper">
     <div ng-app="toDoApp" ng-controller="toDoController">
-      <h2>You have got<span></span> {{toDoTotal()}} things to do</h2>
+      <h2>You have got <span>{{toDoTotal()}}</span> things to do!</h2>
+      <form class="toDoAdd" ng-submit="toDoAdd()">
+          <label for="toDoText"> Need to do </label><input id="toDO" type="text" name="toDoText" ng-model="toDoText" placeholder="Add">
+          <label for="date"> by </label><input type="text" name="date" ng-model="formDueDate" placeholder="mm/dd/yy">
+          <button class="buttonAdd" type="submit">ADD</button>
+      </form>
       <main>
         <table>
           <tr ng-repeat="todo in todos">
@@ -28,11 +33,6 @@
             </td>
           </tr>
         </table>
-        <form ng-submit="toDoAdd()">
-          <p for="toDoText"> Need to do </p><input id="toDO" type="text" name="toDoText" ng-model="toDoText" placeholder="Add">
-          <p for="date"> by </p><input type="text" name="date" ng-model="formDueDate" placeholder="mm/dd/yy">
-          <button type="submit"><h3>ADD</h3></button>
-        </form>
       </main><!-- /main -->
     </div>
 
@@ -70,6 +70,7 @@
                };
          });
     </script>
+    
     <script src="../build/lib/es6-shim.min.js"></script>
     <script src="../build/lib/angular2-polyfills.js"></script>
     <script src="../build/lib/traceur-runtime.js"></script>
