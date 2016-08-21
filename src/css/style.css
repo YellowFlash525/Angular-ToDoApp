@@ -96,16 +96,18 @@ tr td:first-child {
 .buttonAdd {
 	margin: 0px 30px;
 	padding: 10px 30px;
-	background: #55B6AE;
-	color: #13756D;
-	border:none;
+	background: #13756D;
+	color: #55B6AE;
+	border: 2px solid;
 	border-radius: 5px;
+	position: relative;
+	top: -7px;
 }
 
 .buttonAdd:hover {
 	margin: 0px 30px;
 	padding: 10px 30px;
-	background: #13756D;
-	color: #55B6AE;
-	border:none;
+	background: #55B6AE;
+	color: #13756D;
+	border: 2px solid;
 }

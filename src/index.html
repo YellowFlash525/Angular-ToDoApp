@@ -15,13 +15,13 @@
     <div ng-app="toDoApp" ng-controller="toDoController">
       <h2>You have got <span>{{toDoTotal()}}</span> things to do!</h2>
       <div class="toDoAdd">
-      <form ng-submit="toDoAdd()">
+        <form ng-submit="toDoAdd()">
           <label for="toDoText"> Need to do </label>
           <input id="toDO" class="inputText" type="text" name="toDoText" ng-model="toDoText">
           <label for="date"> by </label>
           <input class="inputText" type="text" name="date" ng-model="formDueDate" placeholder="mm/dd/yy">
           <button class="buttonAdd" type="submit">ADD</button>
-      </form>
+        </form>
       </div>
       <main>
         <table>
