@@ -14,16 +14,21 @@
   <body class="todo-wrapper">
     <div ng-app="toDoApp" ng-controller="toDoController">
       <h2>You have got <span>{{toDoTotal()}}</span> things to do!</h2>
-      <form class="toDoAdd" ng-submit="toDoAdd()">
+      <div class="toDoAdd">
+      <form ng-submit="toDoAdd()">
           <label for="toDoText"> Need to do </label>
           <input id="toDO" class="inputText" type="text" name="toDoText" ng-model="toDoText">
           <label for="date"> by </label>
           <input class="inputText" type="text" name="date" ng-model="formDueDate" placeholder="mm/dd/yy">
           <button class="buttonAdd" type="submit">ADD</button>
       </form>
+      </div>
       <main>
         <table>
           <tr ng-repeat="todo in todos">
+            <td>
+              <input type="checkbox" name="">
+            </td>
             <td>
               {{todo.description}}
             </td>
