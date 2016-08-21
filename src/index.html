@@ -27,12 +27,12 @@
         <table>
           <tr ng-repeat="todo in todos">
             <td>
-              <input type="checkbox" name="">
+              <input class="CheckClik" type="checkbox" name="check" ng-model="todo.done">
             </td>
-            <td>
+            <td class="done-{{todo.done}}">
               {{todo.description}}
             </td>
-            <td>
+            <td class="done-{{todo.done}}">
               {{todo.dat | date: 'MMM dd, yyyy'}}
             </td>
             <td class="btn-delete">
@@ -50,11 +50,13 @@
                $scope.todos = [
                   {
                     description: 'Angular1',
-                    dat: Date.now()
+                    dat: Date.now(),
+                    done: false
                   },
                   {
                     description: 'Angular2',
-                    dat: Date.now()
+                    dat: Date.now(),
+                    done: false
                   }
                ];
                

@@ -88,6 +88,11 @@ tr td:first-child {
 	cursor: pointer;
 }
 
+.done-true {
+  text-decoration: line-through;
+  color: #ddd;
+}
+
 
 .toDoAdd {
 	margin-left: 0px;
