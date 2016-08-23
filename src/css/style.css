@@ -43,7 +43,6 @@ table {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-
 }
 
 tr td {
@@ -115,4 +114,40 @@ tr td:first-child {
 	background: #55B6AE;
 	color: #13756D;
 	border: 2px solid;
+}
+
+.CheckClikk {
+	position: none;
+}
+
+
+@media screen and (max-width: 480px) {
+	table td:nth-child(1),
+  	table td:nth-child(2){
+    	padding-left: 25%;
+  	}
+  	table td:nth-child(1):before,
+  	table td:nth-child(2):before{
+    	position: absolute;
+    	left: .5em;
+    	font-weight: bold;
+  	}
+  	table tr,
+    table td{
+        display: block;
+    }
+    table tr{
+        position: relative;
+        margin-bottom: 1em;
+    }
+
+    table td{
+        background-color: #13756D;
+        border-top: 2px solid #55B6AE;
+    }
+
+    .CheckClik {
+		position: relative;
+		left: -15px;
+	}
 }
