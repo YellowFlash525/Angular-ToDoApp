@@ -24,11 +24,11 @@
           <input id="toDo" class="inputText" type="text" name="toDoText" ng-model="toDoText">
           <label for="date"> by </label>
           <input class="inputText" type="text" name="date" ng-model="formDueDate" placeholder="mm/dd/yy">
-          <button class="buttonAdd" type="submit">ADD</button>
+          <button class="buttonAdd" type="submit">add</button>
         </form>
       </div>
       <main>
-        <table>
+        <table id="myTable">
           <tr ng-repeat="toDo in todos">
             <td>
               <input class="CheckClik" type="checkbox" name="check" ng-model="toDo.done">
